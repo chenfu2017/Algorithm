@@ -22,7 +22,7 @@ def path(i, j):
     while k != j:
         print('%s->'%k,end='')
         k=P[k][j]
-    print('%s->' % j, end='')
+    print('%s->' %j, end='')
 m = len(G)
 P=make_mat(m,m,0)
 D=make_mat(m,m,0)
