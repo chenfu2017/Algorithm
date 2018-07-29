@@ -41,7 +41,7 @@ def ShortestPath_SPFA(vo):
                 if v[i] not in q:
                     q.append(v[i])
         count = count + 1
-start = 2
+start = 0
 ShortestPath_SPFA(start)
 print(D)
 
