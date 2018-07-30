@@ -11,6 +11,7 @@ G = {
 
 visited = []
 stack = []
+time = 0
 low = [0] * len(G)
 dfn = [0] * len(G)
 for i in range(len(G)):
@@ -19,7 +20,6 @@ for i in range(len(G)):
 def getIndex(a):
     return list(G.keys()).index(a)
 
-time = 0
 def tarjin(u):
     uindex = getIndex(u)
     visited[uindex] = True
