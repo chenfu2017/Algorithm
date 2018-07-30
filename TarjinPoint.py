@@ -59,9 +59,7 @@ def tarjin(u):
             print('%s是割点'%u)
 
 tarjin('d')
-print(R)
-print(dfn)
-print(low)
+
 
 
 
