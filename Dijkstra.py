@@ -54,6 +54,5 @@ def Display(start, temp):
 start = 0
 end = 3
 ShortestPath_DIJ(start)
-print(P)
 print(D)
 Display(start,end)
