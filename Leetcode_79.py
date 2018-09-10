@@ -37,6 +37,10 @@ class Solution:
         return False
 
 
-board = [["A", "B", "C", "D", "E"], ["T", "S", "R", "Q", "F"], ["M", "N", "O", "P", "G"], ["L", "K", "J", "I", "H"]]
+board = [["A", "B", "C", "D", "E"],
+         ["T", "S", "R", "Q", "F"],
+         ["M", "N", "O", "P", "G"],
+         ["L", "K", "J", "I", "H"]
+    ]
 word = "ABCDEFGHIJKLMNOPQRST"
 print(Solution().exist(board, word))
