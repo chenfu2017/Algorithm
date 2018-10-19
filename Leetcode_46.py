@@ -29,4 +29,4 @@ class Solution:
 
 
 
-Solution().permute([1, 2, 3])
+print(Solution().permute([1, 2, 3]))
