@@ -1,22 +1,16 @@
 #最短路径
 INF = 65535
 G = [
-    [INF, 10, 35, 200],
-    [INF, INF, 15, 40],
-    [INF, INF, INF, 10],
-    [INF, INF, INF, INF],
+    [INF, 10, INF, 5,INF],
+    [INF, INF, 1, 2, INF],
+    [INF, INF, INF,INF,4],
+    [INF , 3, 9, INF,  2],
+    [7 , INF, 6, INF,INF],
 ]
-P = []
-D = []
-S = []
-def init(m):
-    for i in range(m):
-        P.append(0)
-        D.append(0)
-        S.append(False)
-
 m = len(G)
-init(m)
+P = [0]*m
+D = [0]*m
+S = [False]*m
 def ShortestPath_DIJ(vo):
     for v in range(m):
         S[v] = False
@@ -52,7 +46,7 @@ def Display(start, temp):
             print(stack.pop())
 
 start = 0
-end = 3
+end = 2
 ShortestPath_DIJ(start)
 print(D)
 Display(start,end)
