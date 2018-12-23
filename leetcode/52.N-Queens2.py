@@ -2,7 +2,7 @@ class Solution:
     col = []
     diag1 = []
     diag2 = []
-    row = 0
+    row=0
     def totalNQueens(self, n):
         """
         :type n: int
@@ -30,5 +30,5 @@ class Solution:
         return
 
 
-n = 4
+n = 8
 print(Solution().totalNQueens(n))
