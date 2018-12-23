@@ -18,7 +18,6 @@ class Solution:
             for j in range(len(B)):
                 if 0-A[i]-B[j] in m:
                     res += m[0-A[i]-B[j]]
-
         return res
 
 
