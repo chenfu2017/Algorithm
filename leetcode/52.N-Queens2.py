@@ -19,7 +19,7 @@ class Solution:
         if index == n:
             self.row += 1
         for i in range(n):
-            if not self.col[i] and not self.diag1[i + index] and not self.diag2[index - i + n - 1]:
+            if not self.col[i] and not self.diag1[i + index]and not self.diag2[index - i + n - 1]:
                 self.col[i] = True
                 self.diag1[i + index] = True
                 self.diag2[index - i + n - 1] = True
@@ -28,7 +28,6 @@ class Solution:
                 self.diag1[i + index] = False
                 self.diag2[index - i + n - 1] = False
         return
-
 
 n = 8
 print(Solution().totalNQueens(n))
