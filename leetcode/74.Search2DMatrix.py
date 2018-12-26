@@ -5,38 +5,22 @@ class Solution:
         :type target: int
         :rtype: bool
         """
-        if len(matrix)==0 or len(matrix[0])==0 or target>matrix[-1][-1]:
-            return False
-        m = len(matrix)
-        n = len(matrix[0])
-        l = []
-        for i in range(m):
-            l.append(matrix[i][0])
-        i,j=0,m
-        while i<=j and (i + j)//2<m:
-            mid = (i + j)//2
-            if target==l[mid]:
+        if len(matrix) == 0: return False
+        m, n = len(matrix), len(matrix[0])
+        l, r = 0, m*n-1
+        while l <= r:
+            m = l + ((r-l)>>1)
+            row, col = m // n, m %n
+            if matrix[row][col] == target:
                 return True
-            elif target<l[mid]:
-                j = mid-1
+            elif matrix[row][col] < target:
+                l = m + 1
             else:
-                i = mid+1
-        if j ==-1:
-            return False
-        row = j
-        i,j = 0,n
-        while i<=j:
-            mid = (i + j) // 2
-            if target==matrix[row][mid]:
-                return True
-            elif target<matrix[row][mid]:
-                j = mid-1
-            else:
-                i = mid+1
+                r = m - 1
         return False
 matrix = [
   [1,   3,  5,  7],
   [10, 11, 16, 20],
   [23, 30, 34, 50]
 ]
-print(Solution().searchMatrix([[]],3))
+print(Solution().searchMatrix(matrix,0))
