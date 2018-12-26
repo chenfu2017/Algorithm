@@ -11,16 +11,7 @@ class Solution:
         :type k: int
         :rtype: ListNode
         """
-        i = 0
-        q = head
-        while i<k:
-            p = q.next
-            p.next = q.next
-            q.next = head
-            head = q
-            p = q
-            i +=1
-        return head
+
 
 l1 = ListNode(1)
 l2 = ListNode(2)
