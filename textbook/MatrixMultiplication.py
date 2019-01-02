@@ -12,10 +12,14 @@ def fun(p):
                 if tmp < m[i][j]:
                     m[i][j] = tmp
                     s[i][j] = k
-    for i in m:
-        print(i)
-    for i in s:
-        print(i)
+    show(m)
+    show(s)
+def show(arr):
+    for i in arr:
+        for j in i:
+            print('%8.0f'%j,end='')
+        print()
+
 
 p = [30,35,15,5,10,20,25]
 fun(p)

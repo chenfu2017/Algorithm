@@ -7,7 +7,7 @@ class Solution:
             return list
         l = []
         self.visit = [False]*len(nums)
-        self.fun(nums, 0, l)
+        self.fun(nums, 0,l)
         return self.list
 
     def fun(self, nums, index, l):
