@@ -2,6 +2,11 @@ import queue
 
 
 class Solution:
+    """
+           node [ub, level, w, v, x[n]]
+           ub 上界 level 搜索空间层级 w 总重量 v 总价值 x[] 解向量
+    """
+
     def __init__(self):
         self.v = [6, 10, 12]
         self.w = [1, 2, 3]
@@ -37,11 +42,12 @@ class Solution:
             cx[i] = 1
             self.backtracking(capacity, i + 1, cv + self.v[i], cw + self.w[i], cx)
         cx[i] = 0
-        if sum(self.v[i + 1:]) + cv > self.bestValue:
+        node = [0, i + 1, cw, cv, None]
+        self.bound(capacity, node)
+        if node[0] > self.bestValue:
             self.backtracking(capacity, i + 1, cv, cw, cx)
 
     def bound(self, capacity, node):
-        # node ub i w v x
         n = len(self.v)
         i, sumw, sumv = node[1], node[2], node[3]
         while i < n and sumw + self.w[i] <= capacity:
@@ -69,10 +75,6 @@ class Solution:
         return node
 
     def branchBounding(self, capacity):
-        """
-               node [ub, level, w, v, x[n]]
-               ub 上界 level 搜索空间层级 w 总重量 v 总价值 x[] 解向量
-        """
         ub, level, w, v, x = range(5)
         n = len(self.v)
         q = queue.PriorityQueue()
@@ -97,7 +99,7 @@ class Solution:
 
 solution = Solution()
 # solution.dp(5)
-# solution.backtracking(5, 0, 0, 0, [0] * 3)
-solution.branchBounding(5)
+solution.backtracking(5, 0, 0, 0, [0] * 3)
+# solution.branchBounding(5)
 print(solution.bestValue)
 print(solution.x)
