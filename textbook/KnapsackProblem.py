@@ -19,8 +19,7 @@ class Solution:
         r1 = self.recursion(i - 1, c)
         if c >= self.w[i]:
             r2 = self.recursion(i - 1, c - self.w[i]) + self.v[i]
-        return max(r1,r2)
-
+        return max(r1, r2)
 
     def dp(self, capacity):
         n = len(self.w)
@@ -41,7 +40,6 @@ class Solution:
         self.bestValue = m[-1][-1]
         return m[-1][-1]
 
-
     def backtracking(self, capacity, i, cv, cw, cx):
         if i >= len(self.w):
             if self.bestValue < cv:
@@ -57,7 +55,6 @@ class Solution:
         if node[0] > self.bestValue:
             self.backtracking(capacity, i + 1, cv, cw, cx)
 
-
     def bound(self, capacity, node):
         n = len(self.v)
         i, sumw, sumv = node[1], node[2], node[3]
@@ -70,7 +67,6 @@ class Solution:
         else:
             node[0] = sumv
 
-
     def push(self, q, node):
         ub, level, w, v, x = range(5)
         if node[level] == len(self.v):
@@ -81,12 +77,10 @@ class Solution:
             node[0] = -node[0]
             q.put(node)
 
-
     def pop(self, q):
         node = q.get()
         node[0] = -node[0]
         return node
-
 
     def branchBounding(self, capacity):
         ub, level, w, v, x = range(5)
@@ -115,7 +109,6 @@ solution = Solution()
 # solution.dp(5)
 # solution.backtracking(5, 0, 0, 0, [0] * 3)
 # solution.branchBounding(5)
-solution.bestValue=solution.recursion(2, 5)
+solution.bestValue = solution.recursion(2, 5)
 print(solution.bestValue)
 # print(solution.x)
-
