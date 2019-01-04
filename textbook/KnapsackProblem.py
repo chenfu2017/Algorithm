@@ -84,11 +84,11 @@ class Solution:
             child_level = parent[level] + 1
             i = parent[level]
             if parent[w] + self.w[parent[level]] <= capacity:
-                left = [0, child_level, parent[w] + self.w[i], parent[v] + self.v[i], parent[x]]
+                left = [0, child_level, parent[w] + self.w[i], parent[v] + self.v[i], parent[x].copy()]
                 left[x][parent[level]] = 1
                 self.bound(capacity, left)
                 self.push(q, left)
-            right = [0, child_level, parent[w], parent[v], parent[x]]
+            right = [0, child_level, parent[w], parent[v], parent[x].copy()]
             right[x][i] = 0
             self.bound(capacity, right)
             if right[ub] > self.bestValue:
@@ -96,8 +96,8 @@ class Solution:
 
 
 solution = Solution()
-solution.dp(5)
-solution.backtracking(5, 0, 0, 0, [0] * 3)
+# solution.dp(5)
+# solution.backtracking(5, 0, 0, 0, [0] * 3)
 solution.branchBounding(5)
 print(solution.bestValue)
 print(solution.x)
