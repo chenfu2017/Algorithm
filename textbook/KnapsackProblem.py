@@ -115,7 +115,7 @@ solution = Solution()
 # solution.dp(5)
 # solution.backtracking(5, 0, 0, 0, [0] * 3)
 # solution.branchBounding(5)
-solution.bestValue=solution.recursion(len(solution.v) - 1, 5)
+solution.bestValue=solution.recursion(2, 5)
 print(solution.bestValue)
 # print(solution.x)
 
