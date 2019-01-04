@@ -16,10 +16,10 @@ class Solution:
     def recursion(self, i, c):
         if i < 0 or c <= 0:
             return 0
-        r1 = self.recursion(i - 1, c)
+        res = self.recursion(i - 1, c)
         if c >= self.w[i]:
-            r2 = self.recursion(i - 1, c - self.w[i]) + self.v[i]
-        return max(r1, r2)
+            res = max(res, self.recursion(i - 1, c - self.w[i]) + self.v[i])
+        return res
 
     def dp(self, capacity):
         n = len(self.w)
