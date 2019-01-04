@@ -19,7 +19,7 @@ class Solution:
         r1 = self.recursion(i - 1, c)
         if c >= self.w[i]:
             r2 = self.recursion(i - 1, c - self.w[i]) + self.v[i]
-            return max(r1,r2)
+        return max(r1,r2)
 
 
 def dp(self, capacity):
