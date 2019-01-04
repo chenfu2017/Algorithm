@@ -13,7 +13,7 @@ class Solution:
                 p[i] = min(maxx - i, p[2 * id - i])
             else:
                 p[i] = 1
-            while (i + p[i] < len(s) and i - p[i] >= 0 and s[i + p[i]] == s[i - p[i]]):
+            while i + p[i] < len(s) and i - p[i] >= 0 and s[i + p[i]] == s[i - p[i]]:
                 p[i] += 1
             if i + p[i] > maxx:
                 maxx = i + p[i]
