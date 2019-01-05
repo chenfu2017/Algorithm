@@ -1,24 +1,22 @@
-#最短路径
-INF = 65535
+# 最短路径
+INF = float('INF')
 G = [
-    [INF, 10, INF, 5,INF],
+    [INF, 10, INF, 5, INF],
     [INF, INF, 1, 2, INF],
-    [INF, INF, INF,INF,4],
-    [INF , 3, 9, INF,  2],
-    [7 , INF, 6, INF,INF],
+    [INF, INF, INF, INF, 4],
+    [INF, 3, 9, INF, 2],
+    [7, INF, 6, INF, INF],
 ]
 m = len(G)
-P = [0]*m
-D = [0]*m
-S = [False]*m
+P = [0] * m
+D = [0] * m
+S = [False] * m
+
+
 def ShortestPath_DIJ(vo):
     for v in range(m):
-        S[v] = False
         D[v] = G[vo][v]
-        if [D[v] < INF]:
-            P[v] = vo
-        else:
-            P[v] = -1
+        P[v] = vo
     S[vo] = True
     D[vo] = 0
     for i in range(1, m):
@@ -33,6 +31,7 @@ def ShortestPath_DIJ(vo):
                 D[w] = D[v] + G[v][w]
                 P[w] = v
 
+
 def Display(start, temp):
     stack = []
     stack.append(temp)
@@ -40,13 +39,14 @@ def Display(start, temp):
         stack.append(P[temp])
         temp = P[temp]
     while len(stack):
-        if len (stack)>1 :
-            print('%s->'%stack.pop(),end='')
+        if len(stack) > 1:
+            print('%s->' % stack.pop(), end='')
         else:
             print(stack.pop())
+
 
 start = 0
 end = 2
 ShortestPath_DIJ(start)
 print(D)
-Display(start,end)
+Display(start, end)
