@@ -9,7 +9,8 @@ class Solution:
 
         def permute_1_detail(index, l):
             if index == n:
-                self.res.append(l)
+                if l not in self.res:
+                    self.res.append(l)
                 return
             for i in range(n):
                 if not self.visit[i]:
@@ -22,7 +23,8 @@ class Solution:
     def permute_2(self, index, l):
         n = len(l)
         if index == n:
-            self.res.append(l.copy())
+            if l not in self.res:
+                self.res.append(l.copy())
             return
         for i in range(index, n):
             l[index], l[i] = l[i], l[index]
@@ -31,7 +33,7 @@ class Solution:
 
 
 s = Solution()
-l = ['a', 'b', 'c', 'd']
+l = ['a', 'a', 'c', 'c']
 # s.permute_1(l)
 s.permute_2(0, l)
 for r in s.res:

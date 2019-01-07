@@ -17,4 +17,4 @@ class Solution:
                 print("%d:%d张" % (m[i], res[i]),end='   ')
 
 
-Solution().change(205)
+Solution().change(248)

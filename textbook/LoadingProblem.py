@@ -8,9 +8,9 @@ class Solution:
     """
 
     def __init__(self):
-        self.w = [8, 11, 3, 5, 7, 10]
-        self.c1 = 21
-        self.c2 = 24
+        self.w = [3,2,1]
+        self.c1 = 3
+        self.c2 = 4
         self.r = sum(self.w)
         self.sum = sum(self.w)
         self.x = [0] * len(self.w)
@@ -69,10 +69,47 @@ class Solution:
             self.dfs(i + 1, cw, cx)
         self.r += self.w[i]
 
+    def push(self, q, node):
+        ub, level, w, x = range(4)
+        if node[level] == len(self.w):
+            print(node)
+            if node[w] > self.bestWeight:
+                self.bestWeight = node[w]
+                self.x = node[x]
+        else:
+            node[0] = -node[0]
+            q.put(node)
+
+    def pop(self, q):
+        node = q.get()
+        node[0] = -node[0]
+        return node
+
+    def bfs(self):
+        ub, level, w, x = range(4)
+        n = len(self.w)
+        q = queue.PriorityQueue()
+        node = [self.r,0,0,[0]*n]
+        self.push(q,node)
+        while not q.empty():
+            parent =self.pop(q)
+            child_level=parent[level]+1
+            i = parent[level]
+            cw = parent[w]
+            if parent[w] + self.w[i] <= self.c1:
+                left = [cw +sum(self.w[i:]), child_level, parent[w] + self.w[i], parent[x].copy()]
+                left[x][parent[level]] = 1
+                self.push(q, left)
+            right = [cw + sum(self.w[i+1:]), child_level, parent[w], parent[x].copy()]
+            right[x][i] = 0
+            if cw + sum(self.w[i:]) > self.bestWeight:
+                self.push(q, right)
+
 
 s = Solution()
 # s.recursion()
 # s.dp()
-s.dfs(0, 0, len(s.w) * [0])
+# s.dfs(0, 0, len(s.w) * [0])
+s.bfs()
 print(s.x)
 print(s.bestWeight)
