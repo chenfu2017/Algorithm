@@ -8,7 +8,7 @@ class Solution:
         q.put(node)
         n = len(G)
         dist = [float('INF')] * n
-        p = [float('INF')] * n
+        p = [None] * n
         visited = [False] * n
         while not q.empty():
             d, v = q.get()
