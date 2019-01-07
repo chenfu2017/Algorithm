@@ -8,7 +8,7 @@ class Solution:
         q.put(node)
         n = len(G)
         dist = [float('INF')] * n
-        p = [start] * n
+        p = [float('INF')] * n
         visited = [False] * n
         while not q.empty():
             d, v = q.get()
@@ -19,7 +19,7 @@ class Solution:
                     node = [dist[w], w]
                     p[w] = v
                     q.put(node)
-        print(dist)
+        return dist
 
 
 INF = float('INF')
@@ -32,4 +32,4 @@ G = [
     [INF, INF, INF, INF, INF, 0]
 
 ]
-Solution().min_path(G, 0)
+print(Solution().min_path(G, 0))
