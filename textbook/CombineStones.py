@@ -1,16 +1,18 @@
 tone = [4, 4, 5, 9]
 n = len(tone)
-sum=[]
+sum = []
 for i in range(n):
-    if i==0:
+    if i == 0:
         sum.append(tone[0])
     else:
         sum.append(sum[i - 1] + tone[i])
+
+
 def getSum(i, j):
     if i + j >= n:
         return getSum(i, n - i - 1) + getSum(0, i + j - n)
     else:
-        return sum[i + j] - [0,sum[i - 1]][i>0]
+        return sum[i + j] - [0, sum[i - 1]][i > 0]
 
 
 def find():
@@ -27,4 +29,6 @@ def find():
     print(dp_min[0][n - 1])
     print(dp_min)
     print(dp_max[0][n - 1])
+
+
 find()

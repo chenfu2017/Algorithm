@@ -12,5 +12,5 @@ class Solution:
         return min(self.close_point(left), self.close_point(right), d)
 
 
-points = [1, 3, 7, 10, 15, 20, 25]
+points = [1, 4, 7, 10, 15, 20, 25]
 print(Solution().close_point(points))

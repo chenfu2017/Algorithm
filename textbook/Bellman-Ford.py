@@ -1,4 +1,4 @@
-#最短路径
+# 最短路径
 INF = 65535
 G = [
     [INF, 10, 35, 200],
@@ -7,6 +7,8 @@ G = [
     [INF, INF, INF, INF],
 ]
 D = []
+
+
 def getEdges(G):
     v = []  # 出发点
     u = []  # 对应的相邻到达点
@@ -21,12 +23,15 @@ def getEdges(G):
     print(u)
     print(w)
     return v, u, w
+
+
 def initDist(vo):
     for k in range(len(G)):
         if k == vo:
             D.append(0)
         else:
             D.append(INF)
+
 
 def ShortestPath_BF(vo):
     initDist(vo)
@@ -43,8 +48,8 @@ def ShortestPath_BF(vo):
         if flag == False: break
     if count == len(G) - 1:
         print('有负环')
+
+
 start = 0
 ShortestPath_BF(start)
 print(D)
-
-
