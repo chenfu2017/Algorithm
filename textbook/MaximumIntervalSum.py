@@ -11,5 +11,5 @@ class Solution:
         return res
 
 
-num = [-2, 11, -12, 15, -6, 5, 10 - 2]
+num = [-2, 11, -12, 15, -6, 5, 10, - 2]
 print(Solution().interval_sum(num))
