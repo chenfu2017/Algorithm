@@ -13,7 +13,7 @@ class Solution:
             for j in range(1, k):
                 for d in range(i):
                     m[i][j] = max(m[i][j], m[d][j - 1] * c[d + 1][i])
-        for i in m:
+        for i in c:
             for j in i:
                 print("%8d" % j, end=' ')
             print()
