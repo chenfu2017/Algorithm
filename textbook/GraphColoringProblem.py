@@ -39,5 +39,6 @@ G = [
 ]
 s = Solution()
 s.find(G, 3, 0, [-1] * len(G))
-print(s.res)
+for r in s.res:
+    print(r)
 print(s.count)
