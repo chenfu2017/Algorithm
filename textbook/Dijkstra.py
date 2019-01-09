@@ -21,6 +21,7 @@ def ShortestPath_DIJ(vo):
     D[vo] = 0
     for i in range(1, m):
         min = INF
+        v = vo
         for w in range(m):
             if (not S[w]) and D[w] < min:
                 v = w
