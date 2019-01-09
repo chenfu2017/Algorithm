@@ -1,4 +1,4 @@
-#求图的割边和割点
+# 求图的割边和割点
 G = {
     'a': set('bce'),
     'b': set('acd'),
@@ -23,8 +23,10 @@ dfn = [0] * len(G)
 for i in range(len(G)):
     visited.append(False)
 
+
 def getIndex(a):
     return list(G.keys()).index(a)
+
 
 def exist(u, v):
     for a in R.get(u):
@@ -32,13 +34,17 @@ def exist(u, v):
             return True
     return False
 
+
 def getParent(u):
     for k in R:
-        if exist(k,u):
+        if exist(k, u):
             return k
     return None
 
+
 time = 0
+
+
 def tarjin(u):
     uindex = getIndex(u)
     visited[uindex] = True
@@ -59,16 +65,13 @@ def tarjin(u):
             if low[vindex] >= dfn[uindex]:
                 count += 1
     if count > 0:
-        if dfn[uindex]==1:
+        if dfn[uindex] == 1:
             if count > 1:
-                print('%s是割点'%u)
+                print('%s是割点' % u)
         else:
-            print('%s是割点'%u)
-    if low[uindex] == dfn[uindex] and dfn[uindex]!=1:
-        print('%s和%s之间的边为割边'%(u,getParent(u)))
+            print('%s是割点' % u)
+    if low[uindex] == dfn[uindex] and dfn[uindex] != 1:
+        print('%s和%s之间的边为割边' % (u, getParent(u)))
+
+
 tarjin('a')
-
-
-
-
-

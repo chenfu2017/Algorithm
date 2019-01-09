@@ -7,7 +7,7 @@ class Solution:
         l = []
         n = len(s)
         for i in range(n):
-            heapq.heappush(h, (f[i], s[i], i + 1))
+            heapq.heappush(h, (f[i], s[i], i))
         e = 0
         while h:
             node = heapq.heappop(h)

@@ -20,16 +20,16 @@ class Solution:
 
         permute_1_detail(0, [])
 
-    def permute_2(self, index, l):
+    def permute_2(self, i, l):
         n = len(l)
-        if index == n:
+        if i == n:
             if l not in self.res:
                 self.res.append(l.copy())
             return
-        for i in range(index, n):
-            l[index], l[i] = l[i], l[index]
-            self.permute_2(index + 1, l)
-            l[index], l[i] = l[i], l[index]
+        for j in range(i, n):
+            l[i], l[j] = l[j], l[i]
+            self.permute_2(i + 1, l)
+            l[i], l[j] = l[j], l[i]
 
 
 s = Solution()

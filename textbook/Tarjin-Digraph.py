@@ -1,4 +1,4 @@
-#求有向图强连通分量
+# 求有向图强连通分量
 G = {
     'a': set('bc'),
     'b': set('gc'),
@@ -17,8 +17,10 @@ dfn = [0] * len(G)
 for i in range(len(G)):
     visited.append(False)
 
+
 def getIndex(a):
     return list(G.keys()).index(a)
+
 
 def tarjin(u):
     uindex = getIndex(u)
@@ -36,15 +38,12 @@ def tarjin(u):
             tarjin(v)
             low[uindex] = min(low[vindex], low[uindex])
     if low[uindex] == dfn[uindex]:
-        print("强连通分量的集合:{",end='')
+        print("强连通分量的集合:{", end='')
         w = stack.pop()
-        while w !=u:
-            print(w,end=',')
-            w =stack.pop()
-        print(u,end='}\n')
+        while w != u:
+            print(w, end=',')
+            w = stack.pop()
+        print(u, end='}\n')
+
+
 tarjin('a')
-
-
-
-
-
