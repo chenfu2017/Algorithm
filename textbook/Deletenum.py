@@ -3,10 +3,9 @@ class Solution:
         l = []
         for i in nums:
             l.append(i)
-        flag = False
         for i in range(k):
+            flag = False
             for j in range(1, len(l)):
-                flag = False
                 if l[j] < l[j - 1]:
                     l.remove(l[j - 1])
                     flag = True

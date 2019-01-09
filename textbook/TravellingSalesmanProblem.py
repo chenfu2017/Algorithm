@@ -34,7 +34,7 @@ class Solution:
                 self.x = cx.copy()
             return
         for j in range(i, n):
-            if c + self.G[cx[j - 1]][cx[j]] < self.res:
+            if c + self.G[cx[i - 1]][cx[i]] < self.res:
                 cx[j], cx[i] = cx[i], cx[j]
                 self.travel_2(i + 1, c + self.G[cx[i - 1]][cx[i]], cx)
                 cx[j], cx[i] = cx[i], cx[j]

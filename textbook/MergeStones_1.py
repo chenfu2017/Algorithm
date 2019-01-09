@@ -3,7 +3,7 @@ class Solution:
         self.sum=[]
 
     def getSum(self,i,j):
-        return self.sum[j]-[self.sum[i],0][i<0]
+        return self.sum[j]-[self.sum[i-1],0][i<=0]
 
     def merge(self,stones):
         n = len(stones)
@@ -17,7 +17,7 @@ class Solution:
             for i in range(n-r):
                 j = i+r
                 for k in range(i,j):
-                    m[i][j] = min(m[i][j],m[i][k]+m[k+1][j]+self.getSum(i-1,j))
+                    m[i][j] = min(m[i][j],m[i][k]+m[k+1][j]+self.getSum(i,j))
         return m[0][-1]
 
 

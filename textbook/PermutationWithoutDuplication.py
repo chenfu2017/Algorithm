@@ -23,6 +23,7 @@ class Solution:
     def permute_2(self, i, l):
         n = len(l)
         if i == n:
+            print(l)
             if l not in self.res:
                 self.res.append(l.copy())
             return
@@ -33,7 +34,7 @@ class Solution:
 
 
 s = Solution()
-l = ['a', 'b', 'c', 'd']
+l = [1,2,3]
 # s.permute_1(l)
 s.permute_2(0, l)
 for r in s.res:

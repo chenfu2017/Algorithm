@@ -18,6 +18,7 @@ class Solution:
     def putQueen(self, n, index):
         if index == n:
             self.row += 1
+            return
         for i in range(n):
             if not self.col[i] and not self.diag1[i + index]and not self.diag2[index - i + n - 1]:
                 self.col[i] = True

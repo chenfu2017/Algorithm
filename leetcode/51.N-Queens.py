@@ -32,6 +32,7 @@ class Solution:
     def putQueen(self, n, index, row):
         if index == n:
             self.res.append(self.getres(n,row))
+            return
 
         for i in range(n):
             if not self.col[i] and not self.diag1[i + index] and not self.diag2[index - i + n - 1]:
