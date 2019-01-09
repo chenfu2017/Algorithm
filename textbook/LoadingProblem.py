@@ -100,9 +100,9 @@ class Solution:
                 left = [cw +sum(self.w[i:]), child_level, parent[w] + self.w[i], parent[x].copy()]
                 left[x][parent[level]] = 1
                 self.push(q, left)
-            right = [cw + sum(self.w[i+1:]), child_level, parent[w], parent[x].copy()]
-            right[x][i] = 0
             if cw + sum(self.w[i:]) > self.bestWeight:
+                right = [cw + sum(self.w[i + 1:]), child_level, parent[w], parent[x].copy()]
+                right[x][i] = 0
                 self.push(q, right)
 
 

@@ -33,7 +33,7 @@ class Solution:
 
 
 s = Solution()
-l = ['a', 'a', 'c', 'c']
+l = ['a', 'b', 'c', 'd']
 # s.permute_1(l)
 s.permute_2(0, l)
 for r in s.res:
