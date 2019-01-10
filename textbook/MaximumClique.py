@@ -3,6 +3,12 @@ class Solution:
         self.x = []
         self.bestn = 0
 
+    def check(self, G, i, cx):
+        for j in range(i):
+            if cx[j] and not G[i][j]:
+                return False
+        return True
+
     def find(self, i, G, cx, cn):
         n = len(G)
         if i == n:
@@ -10,13 +16,8 @@ class Solution:
                 self.bestn = cn
                 self.x = cx.copy()
             return
-        flag = True
-        for j in range(i):
-            if cx[j] and not G[i][j]:
-                flag = False
-                break
-        if flag:
-            cx[i] = 1
+        cx[i] = 1
+        if self.check(G, i, cx):
             self.find(i + 1, G, cx, cn + 1)
         if cn + n - i > self.bestn:
             cx[i] = 0

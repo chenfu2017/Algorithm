@@ -49,10 +49,10 @@ class Solution:
         if cw + self.w[i] <= capacity:
             cx[i] = 1
             self.backtracking(capacity, i + 1, cv + self.v[i], cw + self.w[i], cx)
-        cx[i] = 0
         node = [0, i + 1, cw, cv, None]
         self.bound(capacity, node)
         if node[0] > self.bestValue:
+            cx[i] = 0
             self.backtracking(capacity, i + 1, cv, cw, cx)
 
     def bound(self, capacity, node):

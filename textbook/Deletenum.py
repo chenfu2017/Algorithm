@@ -15,5 +15,5 @@ class Solution:
         return ''.join(l)
 
 
-nums = "1247"
+nums = "12947"
 print(Solution().delete(nums, 2))

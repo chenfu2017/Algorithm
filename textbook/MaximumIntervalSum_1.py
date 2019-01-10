@@ -19,7 +19,7 @@ class Solution:
                 res = max(b, res)
             else:
                 b = i
-            print(b,end=' ')
+            print(b, end=' ')
         print()
         return res
 

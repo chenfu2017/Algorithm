@@ -12,6 +12,7 @@ u = []
 v = []
 w = []
 
+
 def quickSort(arr, u, v, low, high):
     if low > high:
         return
@@ -31,6 +32,7 @@ def quickSort(arr, u, v, low, high):
     quickSort(arr, u, v, low, i - 1)
     quickSort(arr, u, v, i + 1, high)
 
+
 def init():
     for i in range(len(G)):
         for j in G[i]:
@@ -39,6 +41,7 @@ def init():
                 v.append(j)
                 w.append(G[i][j])
     quickSort(w, u, v, 0, len(w) - 1)
+
 
 def kruskal():
     init()
@@ -52,11 +55,12 @@ def kruskal():
         vs1 = vexset[v1]
         vs2 = vexset[v2]
         if vs1 != vs2:
-            print('边%s-->%s的权值%s'%(v1,v2,w[i]))
+            print('边%s-->%s的权值%s' % (v1, v2, w[i]))
             ans = ans + w[i]
             for j in range(len(vexset)):
                 if vexset[j] == vs2:
                     vexset[j] = vs1
     return ans
 
-print('最小生成树的长度为%s'%kruskal())
+
+print('最小生成树的长度为%s' % kruskal())
