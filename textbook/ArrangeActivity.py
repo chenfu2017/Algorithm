@@ -1,6 +1,5 @@
 import heapq
 
-
 class Solution:
     def arrange(self, s, f):
         h = []

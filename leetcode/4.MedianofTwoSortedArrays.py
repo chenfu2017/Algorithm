@@ -30,3 +30,7 @@ class Solution:
             return (c+l)/2
         else:
             return c
+
+a = [1,3,5,7,16]
+b = [2,6,8]
+print(Solution().findMedianSortedArrays(a,b))

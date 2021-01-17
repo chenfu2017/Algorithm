@@ -9,7 +9,7 @@ def fun(p):
             j = i + r
             for k in range(i, j):
                 tmp = m[i][k] + m[k + 1][j] + p[i] * p[k + 1] * p[j + 1]
-                # print('m[%d,%d]=m[%d,%d]+m[%d,%d]+p[%d,%d,%d]'%(i,j,i,k,k+1,j,i,k+1,j+1))
+                print('m[%d,%d]=m[%d,%d]+m[%d,%d]+p[%d,%d,%d]'%(i,j,i,k,k+1,j,i,k+1,j+1))
                 if tmp < m[i][j]:
                     m[i][j] = tmp
                     s[i][j] = k
@@ -24,5 +24,5 @@ def show(arr):
         print()
 
 
-p = [5,10,3,12,5,50,6]
+p = [2,2,1,3,2]
 fun(p)
