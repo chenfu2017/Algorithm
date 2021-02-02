@@ -28,4 +28,4 @@ class Solution:
         return l
 
 
-print(Solution().longestPalindrome("asa"))
+print(Solution().longestPalindrome("asaasd"))

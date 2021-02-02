@@ -1,29 +1,27 @@
 class Solution(object):
-    def minimumEffortPath(self, heights):
+    def swimInWater(self, grid):
         """
-        :type heights: List[List[int]]
+        :type grid: List[List[int]]
         :rtype: int
         """
-
-        m = len(heights)
-        n = len(heights[0])
-        size = n * m
+        n = len(grid)
+        size = n * n
         uf = UnionFind(size)
         edge = []
-        for i in range(m):
+        for i in range(n):
             for j in range(n):
                 index = i * n + j
                 if i > 0:
-                    edge.append([index - n, index, abs(heights[i][j] - heights[i - 1][j])])
+                    edge.append([index - n, index, max(grid[i][j], grid[i - 1][j])])
                 if j > 0:
-                    edge.append([index - 1, index, abs(heights[i][j] - heights[i][j-1])])
-        if len(edge) ==0:
+                    edge.append([index - 1, index, max(grid[i][j], grid[i][j - 1])])
+        if len(edge) == 0:
             return 0
-        edge.sort(key= lambda e:e[2])
+        edge.sort(key=lambda e: e[2])
         for e in edge:
-            x,y,z = e
-            uf.union(x,y)
-            if uf.connected(0,size-1):
+            x, y, z = e
+            uf.union(x, y)
+            if uf.connected(0, size - 1):
                 return z
 
 
@@ -58,6 +56,5 @@ class UnionFind:
     def getCount(self):
         return self.count
 
-
-heights = [[3]]
-print(Solution().minimumEffortPath(heights))
+grid= [[0,2],[1,3]]
+print(Solution().swimInWater(grid))
