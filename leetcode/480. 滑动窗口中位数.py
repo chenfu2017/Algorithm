@@ -17,7 +17,6 @@ class Solution(object):
         res.append(self.median(a))
         for i, j in zip(nums[:-k], nums[k:]):
             a.pop(bisect.bisect_left(a, i))
-            a.insert(bisect.bisect_left(a, j), j)
             res.append(self.median(a))
         return res
 

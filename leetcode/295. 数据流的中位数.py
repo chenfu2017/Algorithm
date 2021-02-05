@@ -24,8 +24,6 @@ class MedianFinder(object):
         """
         :rtype: float
         """
-        print(self.minqueue)
-        print(self.maxqueue)
         if len(self.minqueue) < len(self.maxqueue):
             return -self.maxqueue[0]
         else:

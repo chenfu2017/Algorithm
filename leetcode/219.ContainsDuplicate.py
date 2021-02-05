@@ -5,10 +5,11 @@ class Solution:
             if nums[i] in s:
                 return True
             s.add(nums[i])
-            if len(s) ==k+1:
-                s.remove(nums[i-k])
+            if len(s) == k + 1:
+                s.remove(nums[i - k])
         return False
 
-nums = [1,2,3,1]
+
+nums = [1, 2, 3, 1]
 k = 3
-print(Solution().containsNearbyDuplicate(nums,k))
+print(Solution().containsNearbyDuplicate(nums, k))
