@@ -6,10 +6,20 @@ class Solution(object):
         :type maxCost: int
         :rtype: int
         """
-        i = j = 0
+        n = len(s)
+        left = right = 0
+        res = 0
+        while right < n:
+            maxCost -= abs(ord(t[right]) - ord(s[right]))
+            if maxCost >= 0:
+                res = max(res, right - left + 1)
+            else:
+                maxCost += abs(ord(t[left]) - ord(s[left]))
+                left += 1
+            right += 1
+        return res
 
-
-s = "abcd"
-t = "bcdf"
-cost = 3
-print(Solution().equalSubstring(s,t,cost))
+s = "krrgw"
+t = "zjxss"
+cost = 19
+print(Solution().equalSubstring(s, t, cost))
