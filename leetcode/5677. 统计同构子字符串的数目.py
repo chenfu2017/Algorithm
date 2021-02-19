@@ -23,5 +23,5 @@ class Solution:
 
 
 
-s = s = 'abbcccaa'
+s = 'abbcccaa'
 print(Solution().countHomogenous(s))
