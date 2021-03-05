@@ -12,7 +12,6 @@ class Solution:
                 return s1[:i]
         return s1
 
-
 s=["as","asd"]
 print(Solution().longestCommonPrefix(s))
 
