@@ -24,4 +24,4 @@ class Solution(object):
 
 
 s = "25525511135"
-Solution().restoreIpAddresses(s)
+print(Solution().restoreIpAddresses(s))

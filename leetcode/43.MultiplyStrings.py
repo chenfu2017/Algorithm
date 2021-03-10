@@ -5,6 +5,7 @@ class Solution:
         :type num2: str
         :rtype: str
         """
-        return str(int(num1)*int(num2))
+        return str(int(num1) * int(num2))
 
-print(Solution().multiply("123","456"))
+
+print(Solution().multiply("123", "456"))

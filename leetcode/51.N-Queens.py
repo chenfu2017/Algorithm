@@ -48,4 +48,4 @@ class Solution:
         return
 
 
-print(Solution().solveNQueens(4))
+print(Solution().solveNQueens(8))
